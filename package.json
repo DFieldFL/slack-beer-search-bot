@@ -1,0 +1,16 @@
+{
+  "name": "brew-search",
+  "version": "1.0.0",
+  "description": "search brews using brewerydb.com api",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brandon Groves",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.13.2",
+    "express": "^4.13.1",
+    "request-json": "^0.5.3"
+  }
+}
