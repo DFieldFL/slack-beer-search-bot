@@ -6,9 +6,9 @@ This node application runs using node v0.12.7 or newer.
 1. Clone repo to your webserver
 2. Copy config.templ.js to config.js
 3. Set values in config.js
-  a. breweryDbKey - Get from http://brewerydb.com so you can use their API for searching
-  b. slackToken - Get from slack https://api.slack.com/web
-  c. searchLimit - Change the max number of search results that should be returned
+  1. breweryDbKey - Get from http://brewerydb.com so you can use their API for searching
+  2. slackToken - Get from slack https://api.slack.com/web
+  3. searchLimit - Change the max number of search results that should be returned
 4. Run `npm install`
 5. Start sever `node app`
 
