@@ -8,6 +8,7 @@ This node application runs using node v0.12.7 or newer.
 3. Set values in config.js
 4. Run `npm install`
 5. Start sever `node app`
+
 ### Slack Command
 1. Go to `https://[company name].slack.com/services/new/slash-commands`
 2. Setup command for search and point it to your webserver `http://[domain name]:[port]/beerSearch
