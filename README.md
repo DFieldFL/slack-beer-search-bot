@@ -2,6 +2,7 @@
 ## Installation/Setup
 ### Server
 This node application runs using node v0.12.7 or newer.
+
 1. Clone repo to your webserver
 2. Copy config.templ.js to config.js
 3. Set values in config.js
