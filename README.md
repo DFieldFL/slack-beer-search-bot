@@ -24,8 +24,23 @@ This node application runs using node v0.12.7 or newer.
 example command:
 `/beerSearch Yuengling`
 
+example response:
+```
+Yuengling Bock Beer id:3kZwor
+Yuengling Premium Beer id:2DdatF
+Yuengling Light Beer id:eXMP2g
+Yuengling Black id:3iNytk
+Yuengling Porter id:BGTAQw
+```
+
 ### Display a beer to the entire chatroom
 `/beer [beer id]`
 
 example command:
-`/beer wd1Y84`
+`/beer 3kZwor`
+
+example response:
+```
+Yuengling Bock Beer
+In celebration of our 180th Anniversary year, the marketplace will see one of the first seasonal offerings from the Yuengling Brewery in many years. Yuengling has produced a Bock Beer in its long and storied past, and we have now reinvented that product for limited release in 2009. The new brew is dark brown in color and offers exceptional flavor that lives up to the quality Yuengling drinkers have grown to expect. Yuengling Bock Beer will be offered in barrels only, beginning in late Show more...
+```
