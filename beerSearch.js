@@ -11,7 +11,7 @@ module.exports = function (req, res, next) {
         var max = body.data.length > config.searchLimit ? config.searchLimit : body.data.length;
         brewsText = '';
         for (var i = 0;i < max;i++) {
-          brewsText += body.data[i].name + ' <b>id:</b>' + body.data[i].id + '\n';
+          brewsText += '*' + body.data[i].name + '* id: *' + body.data[i].id + '*\n';
         }
       }
 

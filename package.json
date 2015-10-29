@@ -8,9 +8,14 @@
   },
   "author": "Brandon Groves",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DFieldFL/slack-beer-search-bot.git"
+  },
   "dependencies": {
     "body-parser": "^1.13.2",
     "express": "^4.13.1",
+    "request": "^2.65.0",
     "request-json": "^0.5.3"
   }
 }
