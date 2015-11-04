@@ -2,11 +2,12 @@ var brewerydb = require('./brewerydb');
 var slack = require('./slack');
 
 module.exports = function (req, res, next) {
-  brewerydb.beer(req.body.text, function(data) {
+  brewerydb.featured(function(data) {
     if(typeof data === 'string' || data instanceof String) {
       res.status(200).send(data);
     } else {
-      var attachments = [slack.createAttachment(data.name, data.id, data.description, data.name, data.labels.medium)];
+      var beer = data.beer;
+      var attachments = [slack.createAttachment(beer.name, beer.id, beer.description, beer.name, beer.labels.medium)];
       slack.displayToChat(req.body.channel_id, attachments);
     }
   });
