@@ -15,7 +15,8 @@ This node application runs using node v0.12.7 or newer.
 ### Slack Command
 1. Go to `https://[company name].slack.com/services/new/slash-commands`
 2. Setup command for search and point it to your webserver `http://[domain name]:[port]/beerSearch`
-2. Setup command for single beer display and point it to your webserver `http://[domain name]:[port]/beer`
+3. Setup command for single beer display and point it to your webserver `http://[domain name]:[port]/beer`
+4. Setup command for displaying the beer of the week and point it to your webserver `http://[domain name]:[port]/botw`
 
 ## Usage
 ### Search for beer
@@ -38,6 +39,18 @@ Yuengling Porter id:BGTAQw
 
 example command:
 `/beer 3kZwor`
+
+example response:
+```
+Yuengling Bock Beer
+In celebration of our 180th Anniversary year, the marketplace will see one of the first seasonal offerings from the Yuengling Brewery in many years. Yuengling has produced a Bock Beer in its long and storied past, and we have now reinvented that product for limited release in 2009. The new brew is dark brown in color and offers exceptional flavor that lives up to the quality Yuengling drinkers have grown to expect. Yuengling Bock Beer will be offered in barrels only, beginning in late Show more...
+```
+
+### Display beer of the week to the entire chatroom
+`/botw`
+
+example command:
+`/botw`
 
 example response:
 ```
