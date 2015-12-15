@@ -6,7 +6,13 @@ This node application runs using node v0.12.7 or newer.
 1. Clone repo to your webserver
 2. Copy config.templ.js to config.js
 3. Set values in config.js
-  1. breweryDbKey - Get from http://brewerydb.com so you can use their API for searching
+  1. Determine what API you want to use
+    1. api - Set to 'untappd' if using the Untappd API or 'breweryDb' if using Brewery DB API
+    2. Untappd
+      1. untappd.clientId - Get from https://untappd.com/api/docs/v4
+      2. untappd.clientSecret - Ditto
+    3. Brewery DB
+      1. brewerydb.key - Get from http://brewerydb.com
   2. slackToken - Get from slack https://api.slack.com/web
   3. searchLimit - Change the max number of search results that should be returned
 4. Run `npm install`
@@ -46,7 +52,7 @@ Yuengling Bock Beer
 In celebration of our 180th Anniversary year, the marketplace will see one of the first seasonal offerings from the Yuengling Brewery in many years. Yuengling has produced a Bock Beer in its long and storied past, and we have now reinvented that product for limited release in 2009. The new brew is dark brown in color and offers exceptional flavor that lives up to the quality Yuengling drinkers have grown to expect. Yuengling Bock Beer will be offered in barrels only, beginning in late Show more...
 ```
 
-### Display beer of the week to the entire chatroom
+### Display beer of the week to the entire chatroom (does not work if using Untappd API)
 `/botw`
 
 example command:

@@ -1,14 +1,15 @@
-var brewerydb = require('./brewerydb');
+var config = require('./config');
+var beerApi = require('./' + config.api);
 var slack = require('./slack');
 
 module.exports = function (req, res, next) {
-  brewerydb.featured(function(data) {
-    if(typeof data === 'string' || data instanceof String) {
-      res.status(200).send(data);
+  beerApi.featured(function(beer) {
+    if(typeof beer === 'undefined') {
+      res.status(200).send('Sorry there must be a leak in the keg. Try again at a later time...');
     } else {
-      var beer = data.beer;
-      var attachments = [slack.createAttachment(beer.name, beer.id, beer.description, beer.name, beer.labels.medium)];
+      var attachments = [slack.createAttachment(beer)];
       slack.displayToChat(req.body.channel_id, attachments);
+      res.status(200).send();
     }
   });
 }

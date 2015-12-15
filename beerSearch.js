@@ -1,21 +1,19 @@
 var config = require('./config');
-var request = require('request-json');
-
-var client = request.createClient(config.breweryDbUrl);
+var beerApi = require('./' + config.api);
+var slack = require('./slack');
 
 module.exports = function (req, res, next) {
-  client.get('search?q=' + req.body.text + '&type=beer&format=json&key=' + config.breweryDbKey,
-    function(err, brewRes, body) {
+  if (typeof req.body.text === 'string') {
+    beerApi.search(req.body.text, function(beers) {
       var brewsText = "Were you searching for a Mike's Hard Lemonade? Try again...";
-      if (typeof(body.data) !== 'undefined') {
-        var max = body.data.length > config.searchLimit ? config.searchLimit : body.data.length;
+      if(typeof beers !== 'undefined') {
         brewsText = '';
+        var max = beers.length > config.searchLimit ? config.searchLimit : beers.length;
         for (var i = 0;i < max;i++) {
-          brewsText += '*' + body.data[i].name + '* id: *' + body.data[i].id + '*\n';
+          brewsText += '*' + beers[i].name + '* id: *' + beers[i].id + '*\n';
         }
       }
-
       res.status(200).send(brewsText);
-    }
-  );
+    });
+  }
 }
