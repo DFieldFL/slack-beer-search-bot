@@ -52,7 +52,7 @@ Yuengling Bock Beer
 In celebration of our 180th Anniversary year, the marketplace will see one of the first seasonal offerings from the Yuengling Brewery in many years. Yuengling has produced a Bock Beer in its long and storied past, and we have now reinvented that product for limited release in 2009. The new brew is dark brown in color and offers exceptional flavor that lives up to the quality Yuengling drinkers have grown to expect. Yuengling Bock Beer will be offered in barrels only, beginning in late Show more...
 ```
 
-### Display beer of the week to the entire chatroom
+### Display beer of the week to the entire chatroom (does not work if using Untappd API)
 `/botw`
 
 example command:
