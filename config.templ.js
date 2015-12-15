@@ -9,7 +9,8 @@ var config = {
   untappd: {
     clientId: '',
     clientSecret: '',
-    urlPrefix: 'https://api.untappd.com/v4/'
+    urlPrefix: 'https://api.untappd.com/v4/',
+    beerLinkPrefix: 'https://untappd.com/beer/'
   },
   slackToken: '',
   slackPostMessage: 'https://slack.com/api/chat.postMessage',

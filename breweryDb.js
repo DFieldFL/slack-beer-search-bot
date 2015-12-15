@@ -7,14 +7,38 @@ module.exports = {
   search: function(searchTerm, callback) {
     client.get('search?q=' + searchTerm + '&' + apiParameters(),
       function(err, brewRes, body) {
-        callbackOrBust(body, callback, "Were you searching for a Mike's Hard Lemonade? Try again...");
-      });
+        var beers = undefined;
+        if (typeof(body.data) !== 'undefined') {
+          var beersJson = body.data;
+          beers = new Array(beersJson.length);
+          for(var i = 0;i < beersJson.length;i++) {
+            var beerData = beersJson[i];
+            beers[i] = {
+              name: beerData.name,
+              id: beerData.id
+            };
+          }
+        }
+        callback(beers);
+      }
+    );
   },
 
   beer: function (beerId, callback) {
     client.get('beer/' + beerId + '?' + apiParameters(),
       function(err, brewRes, body) {
-        callbackOrBust(body, callback, "Sorry we can't find Mike's Hard Lemonade. Try again...");
+        var beer = undefined;
+        if (typeof(body.data) !== 'undefined') {
+          var beerData = body.data;
+          var thumbUrl = typeof beerData.labels !== 'undefined' ? beerData.labels.medium : '';
+          beer = {
+            name: beerData.name,
+            link: config.breweryDb.beerLinkPrefix + beerData.id,
+            description: beerData.description,
+            imageUrl: thumbUrl
+          };
+        }
+        callback(beer);
       }
     );
   },
@@ -22,7 +46,18 @@ module.exports = {
   featured: function(callback) {
     client.get('featured' + '?' + apiParameters(),
       function(err, brewRes, body) {
-        callbackOrBust(body, callback, 'Sorry there must be a leak in the keg. Try again...');
+        var beer = undefined;
+        if (typeof(body.data) !== 'undefined' && typeof(body.data.beer) !== 'undefined') {
+          var beerData = body.data.beer;
+          var thumbUrl = typeof beerData.labels !== 'undefined' ? beerData.labels.medium : '';
+          var beer = {
+            name: beerData.name,
+            link: config.breweryDb.beerLinkPrefix + beerData.id,
+            description: beerData.description,
+            imageUrl: thumbUrl
+          }
+        }
+        callback(beer);
       }
     );
   }
@@ -30,12 +65,4 @@ module.exports = {
 
 var apiParameters = function() {
   return 'format=json&key=' + config.breweryDb.key;
-}
-
-var callbackOrBust = function(body, callback, errMsg) {
-  if (typeof(body.data) !== 'undefined') {
-    callback(body.data);
-  } else {
-    callback(errMsg);
-  }
 }

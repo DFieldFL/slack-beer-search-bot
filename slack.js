@@ -2,14 +2,13 @@ var config = require('./config');
 var request = require('request');
 
 module.exports = {
-  createAttachment: function(name, linkId, description, fallback, thumbUrl) {
-    var linkPrefix = config[config.api].beerLinkPrefix
+  createAttachment: function(beer) {
     return {
-      title: name,
-      title_link: config.linkPrefix + linkId,
-      text: description,
-      fallback: fallback,
-      thumb_url: thumbUrl
+      title: beer.name,
+      title_link: beer.link,
+      text: beer.description,
+      fallback: beer.name,
+      thumb_url: beer.imageUrl
     };
   },
 
