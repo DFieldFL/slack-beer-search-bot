@@ -6,7 +6,13 @@ This node application runs using node v0.12.7 or newer.
 1. Clone repo to your webserver
 2. Copy config.templ.js to config.js
 3. Set values in config.js
-  1. breweryDbKey - Get from http://brewerydb.com so you can use their API for searching
+  1. Determine what API you want to use
+    1. api - Set to 'untappd' if using the Untappd API or 'breweryDb' if using Brewery DB API
+    2. Untappd
+      1. untappd.clientId - Get from https://untappd.com/api/docs/v4
+      2. untappd.clientSecret - Ditto
+    3. Brewery DB
+      1. brewerydb.key - Get from http://brewerydb.com
   2. slackToken - Get from slack https://api.slack.com/web
   3. searchLimit - Change the max number of search results that should be returned
 4. Run `npm install`
