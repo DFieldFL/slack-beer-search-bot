@@ -12,9 +12,9 @@ var port = process.env.PORT || config.listeningPort;
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Beer search route
-app.post('/beerSearch', beerSearch);
-app.post('/beer', beerDisplay);
-app.post('/botw', beerOtw);
+app.post(config.urlPrefix + '/beerSearch', beerSearch);
+app.post(config.urlPrefix + '/beer', beerDisplay);
+app.post(config.urlPrefix + '/botw', beerOtw);
 
 // error handler
 app.use(function (err, req, res, next) {
