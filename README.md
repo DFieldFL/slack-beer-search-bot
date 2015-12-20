@@ -15,22 +15,36 @@ This node application runs using node v0.12.7 or newer.
       1. brewerydb.key - Get from http://brewerydb.com
   2. slackToken - Get from slack https://api.slack.com/web
   3. searchLimit - Change the max number of search results that should be returned
-  4. urlPrefix - If you want to run the service under a sub URL (ex. http://foo.com/bar) add the prefix to this config option (ex. '/bar' if using http://foo.com/bar)
+  4. urlPrefix - (Optional) If you want to run the service under a sub URL (ex. http://foo.com/bar) add the prefix to this config option (ex. '/bar' if using http://foo.com/bar)
 4. Run `npm install`
 5. Start sever `node app`
 
 ### Slack Command
 1. Go to `https://[company name].slack.com/services/new/slash-commands`
-2. Setup command for search and point it to your webserver `http://[domain name]:[port]/beerSearch`
-3. Setup command for single beer display and point it to your webserver `http://[domain name]:[port]/beer`
-4. Setup command for displaying the beer of the week and point it to your webserver `http://[domain name]:[port]/botw`
+2. Setup command endpoint it to your webserver `http://[domain name]:[port]/[urlPrefix]`
 
 ## Usage
-### Search for beer
-`/beerSearch [name of beer]`
+### Help
+`/beer help`
 
 example command:
-`/beerSearch Yuengling`
+`/beer help`
+
+example response:
+```
+Invalid command please try again
+Help:
+/[command] search Yuengling
+/[command] beer 16649
+/[command] botw
+/[command] help
+```
+
+### Search for beer
+`/beer search [name of beer]`
+
+example command:
+`/beer search Yuengling`
 
 example response:
 ```
@@ -42,10 +56,10 @@ Yuengling Porter id:BGTAQw
 ```
 
 ### Display a beer to the entire chatroom
-`/beer [beer id]`
+`/beer display [beer id]`
 
 example command:
-`/beer 3kZwor`
+`/beer display 3kZwor`
 
 example response:
 ```
@@ -54,10 +68,10 @@ In celebration of our 180th Anniversary year, the marketplace will see one of th
 ```
 
 ### Display beer of the week to the entire chatroom (does not work if using Untappd API)
-`/botw`
+`/beer otw`
 
 example command:
-`/botw`
+`/beer otw`
 
 example response:
 ```
