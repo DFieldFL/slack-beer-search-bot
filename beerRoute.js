@@ -45,7 +45,7 @@ module.exports = function(req, res, next) {
         });
         break;
       }
-    case 'beer':
+    case 'display':
       if(typeof search !== 'undefined') {
         beerApi.beer(search, function(beer) {
           if(typeof beer === 'undefined') {
