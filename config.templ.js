@@ -1,4 +1,5 @@
 var config = {
+  urlPrefix: '',
   listeningPort: 3000,
   api: 'untappd',
   breweryDb: {

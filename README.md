@@ -15,7 +15,7 @@ This node application runs using node v0.12.7 or newer.
       1. brewerydb.key - Get from http://brewerydb.com
   2. slackToken - Get from slack https://api.slack.com/web
   3. searchLimit - Change the max number of search results that should be returned
-  4. urlPrefix - If you want to run the service under a sub URL (ex. http://foo.com/bar) add the prefix to this config option (ex. '/bar' if using http://foo.com/bar)
+  4. urlPrefix - (Optional) If you want to run the service under a sub URL (ex. http://foo.com/bar) add the prefix to this config option (ex. '/bar' if using http://foo.com/bar)
 4. Run `npm install`
 5. Start sever `node app`
 
