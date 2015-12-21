@@ -35,7 +35,7 @@ example response:
 Invalid command please try again
 Help:
 /[command] search Yuengling
-/[command] beer 16649
+/[command] display 16649
 /[command] botw
 /[command] help
 ```
