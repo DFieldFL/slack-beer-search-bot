@@ -32,11 +32,9 @@ example command:
 
 example response:
 ```
-Invalid command please try again
 Help:
 /[command] search Yuengling
 /[command] display 16649
-/[command] botw
 /[command] help
 ```
 
@@ -55,7 +53,7 @@ Yuengling Black id:3iNytk
 Yuengling Porter id:BGTAQw
 ```
 
-### Display a beer to the entire chatroom
+### Display a beer to the entire chatroom and is linked to the corresponding API
 `/beer display [beer id]`
 
 example command:
