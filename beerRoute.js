@@ -9,18 +9,19 @@ module.exports = function(req, res, next) {
     return;
   }
 
-  var command = userEntry.indexOf();
+  var command = userEntry;
   var search;
   if(userEntry.indexOf(" ") > 0) {
     var splitIndex = userEntry.indexOf(" ");
-    command = userEntry.substr(0, splitIndex)
+    command = userEntry.substr(0, splitIndex);
     search = userEntry.substr(userEntry.indexOf(" ") + 1);
   }
 
   switch(command) {
     case 'help':
       res.status(200).send(help());
-    case 'botw':
+      break;
+    case 'otw':
       beerApi.botw(function(beer) {
         if(typeof beer === 'undefined') {
           res.status(200).send('Sorry there must be a leak in the keg. Try again at a later time...');
@@ -30,6 +31,7 @@ module.exports = function(req, res, next) {
           res.status(200).send();
         }
       });
+      break;
     case 'search':
       if(typeof search !== 'undefined') {
         beerApi.search(search, function(beers) {
