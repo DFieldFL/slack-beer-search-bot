@@ -13,6 +13,19 @@ module.exports = {
   },
 
   displayToChat: function (channel_id, attachments) {
-    request.get(config.slackPostMessage + '?token=' + config.slackToken + '&channel=' + channel_id + '&username=Beer Search' + '&attachments=' + JSON.stringify(attachments));
+    request.post({
+      url: config.slackPostMessage,
+      json: true,
+      form: {
+        token: config.slackToken,
+        channel: channel_id,
+        username: "Beer Bot",
+        attachments: JSON.stringify(attachments)
+      }
+    }, function(err, httpResponse, body) {
+      if(err) {
+        console.error(body);
+      }
+    });
   }
 };
