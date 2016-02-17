@@ -9,7 +9,7 @@ var port = process.env.PORT || config.listeningPort;
 // body parser middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Beer search route
+// Beer route
 app.post(config.urlPrefix + '/beer', beerRoute);
 
 
