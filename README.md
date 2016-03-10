@@ -60,10 +60,7 @@ example command:
 `/beer display 3kZwor`
 
 example response:
-```
-Yuengling Bock Beer
-In celebration of our 180th Anniversary year, the marketplace will see one of the first seasonal offerings from the Yuengling Brewery in many years. Yuengling has produced a Bock Beer in its long and storied past, and we have now reinvented that product for limited release in 2009. The new brew is dark brown in color and offers exceptional flavor that lives up to the quality Yuengling drinkers have grown to expect. Yuengling Bock Beer will be offered in barrels only, beginning in late Show more...
-```
+![alt tag](https://cloud.githubusercontent.com/assets/2991478/13671184/6bab57f4-e69c-11e5-8741-78fcd992b7a3.png)
 
 ### Display beer of the week to the entire chatroom (does not work if using Untappd API)
 `/beer otw`
@@ -72,7 +69,4 @@ example command:
 `/beer otw`
 
 example response:
-```
-Yuengling Bock Beer
-In celebration of our 180th Anniversary year, the marketplace will see one of the first seasonal offerings from the Yuengling Brewery in many years. Yuengling has produced a Bock Beer in its long and storied past, and we have now reinvented that product for limited release in 2009. The new brew is dark brown in color and offers exceptional flavor that lives up to the quality Yuengling drinkers have grown to expect. Yuengling Bock Beer will be offered in barrels only, beginning in late Show more...
-```
+![alt tag](https://cloud.githubusercontent.com/assets/2991478/13671184/6bab57f4-e69c-11e5-8741-78fcd992b7a3.png)
