@@ -35,6 +35,7 @@ example response:
 Help:
 /[command] search Yuengling
 /[command] display 16649
+/[command] search SweetWater 420
 /[command] help
 ```
 
@@ -54,10 +55,12 @@ Yuengling Porter id:BGTAQw
 ```
 
 ### Display a beer to the entire chatroom and is linked to the corresponding API
-`/beer display [beer id]`
+`/beer display [beer id | beer name]`
 
 example command:
 `/beer display 3kZwor`
+or
+`/beer display Yuengling Bock`
 
 example response:
 ![alt tag](https://cloud.githubusercontent.com/assets/2991478/13671184/6bab57f4-e69c-11e5-8741-78fcd992b7a3.png)
