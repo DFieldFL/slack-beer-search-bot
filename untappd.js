@@ -62,7 +62,7 @@ var beerById = function(beerId, callback) {
         beer = {
           name: beerData.beer_name + ' - ' + beerData.brewery.brewery_name,
           link: config.untappd.beerLinkPrefix + beerData.bid,
-          description: beerData.beer_description,
+          description: 'Rating: ' + beerData.rating_score + ' | ABV: ' + beerData.beer_abv + ' | ' + beerData.beer_description,
           imageUrl: beerData.beer_label
         };
       }
